@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сантехник рыбка - Услуги сантехника в Москве</title>
+    <title>Юрий - Частный сантехник | Профессиональные услуги сантехники</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -13,39 +13,35 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        a {
-           text-decoration: none;
-        }
 
         :root {
             --primary: #1e88e5;
-            --primary-dark: #1565c0;
-            --secondary: #f5f9ff;
-            --accent: #4fc3f7;
-            --text: #333333;
-            --light-text: #757575;
-            --white: #ffffff;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --primary-dark: #0d47a1;
+            --secondary: #e3f2fd;
+            --light: #f8f9fa;
+            --dark: #212121;
+            --gray: #757575;
+            --border: #e0e0e0;
         }
 
         body {
-            background-color: #fafafa;
-            color: var(--text);
+            background-color: var(--light);
+            color: var(--dark);
             line-height: 1.6;
-            position: relative;
+            overflow-x: hidden;
         }
 
         .container {
-            width: 100%;
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
         /* Header Styles */
         header {
-            background-color: var(--white);
-            box-shadow: var(--shadow);
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
@@ -62,100 +58,105 @@
         .logo {
             display: flex;
             align-items: center;
+            gap: 10px;
         }
 
         .logo-icon {
-            background-color: var(--primary);
-            color: var(--white);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 10px;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 28px;
             color: var(--primary);
         }
 
-        .logo-text span {
-            color: var(--text);
+        .logo h1 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-dark);
         }
 
         .nav-menu {
             display: flex;
-            list-style: none;
-        }
-
-        .nav-menu li {
-            margin-left: 30px;
+            gap: 30px;
         }
 
         .nav-menu a {
             text-decoration: none;
-            color: var(--text);
+            color: var(--dark);
             font-weight: 500;
             transition: color 0.3s;
+            position: relative;
         }
 
         .nav-menu a:hover {
             color: var(--primary);
         }
 
-        .header-phone {
-            display: flex;
-            align-items: center;
-            margin-right: 20px;
-            font-weight: 600;
-            color: var(--primary-dark);
-        }
-
-        .header-phone i {
-            margin-right: 8px;
-            color: var(--primary);
-        }
-
-        .contact-btn {
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
             background-color: var(--primary);
-            color: var(--white);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .contact-header {
             display: flex;
             align-items: center;
+            gap: 15px;
         }
 
-        .contact-btn i {
-            margin-right: 8px;
+        .phone-link {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 600;
         }
 
-        .contact-btn:hover {
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .social-icon:hover {
             background-color: var(--primary-dark);
         }
 
-        .menu-toggle {
+        .mobile-toggle {
             display: none;
-            font-size: 1.5rem;
+            font-size: 24px;
             cursor: pointer;
-            color: var(--primary);
+            color: var(--primary-dark);
         }
 
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            padding: 150px 0 80px;
+            padding: 150px 0 100px;
             text-align: center;
         }
 
-        .hero h1 {
-            font-size: 2.5rem;
+        .hero h2 {
+            font-size: 2.8rem;
             margin-bottom: 20px;
             color: var(--primary-dark);
         }
@@ -164,48 +165,33 @@
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
-            color: var(--light-text);
+            color: var(--gray);
         }
 
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .btn-primary {
+        .cta-button {
+            display: inline-block;
             background-color: var(--primary);
-            color: var(--white);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 15px rgba(30, 136, 229, 0.3);
+            cursor: pointer;
+            border: none;
         }
 
-        .btn-primary:hover {
+        .cta-button:hover {
             background-color: var(--primary-dark);
             transform: translateY(-3px);
         }
 
-        .btn-outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: var(--white);
-            transform: translateY(-3px);
-        }
-
         /* Services Section */
-        .section {
-            padding: 80px 0;
+        .services {
+            padding: 100px 0;
+            background-color: white;
         }
 
         .section-title {
@@ -214,7 +200,7 @@
         }
 
         .section-title h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--primary-dark);
             margin-bottom: 15px;
             position: relative;
@@ -229,179 +215,132 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background-color: var(--accent);
-            border-radius: 2px;
+            background-color: var(--primary);
         }
 
         .section-title p {
-            color: var(--light-text);
+            color: var(--gray);
             max-width: 700px;
             margin: 20px auto 0;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
         .service-card {
-            background-color: var(--white);
+            background-color: var(--light);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid var(--border);
         }
 
         .service-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(30, 136, 229, 0.15);
         }
 
         .service-icon {
-            background-color: var(--secondary);
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
+            font-size: 50px;
             color: var(--primary);
+            margin-bottom: 20px;
         }
 
-        .service-content {
-            padding: 25px;
-        }
-
-        .service-content h3 {
-            font-size: 1.3rem;
+        .service-card h3 {
+            font-size: 1.4rem;
             margin-bottom: 15px;
             color: var(--primary-dark);
         }
 
-        .service-content p {
-            color: var(--light-text);
-            margin-bottom: 15px;
-        }
-
         .service-price {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary);
+            margin: 15px 0;
+        }
+
+        .service-description {
+            color: var(--gray);
+            font-size: 0.95rem;
         }
 
         /* Portfolio Section */
         .portfolio {
+            padding: 100px 0;
             background-color: var(--secondary);
         }
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
 
         .portfolio-item {
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            background-color: var(--white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: white;
             transition: transform 0.3s;
         }
 
         .portfolio-item:hover {
-            transform: scale(1.03);
+            transform: translateY(-5px);
         }
 
         .portfolio-img {
-            height: 200px;
+            width: 100%;
+            height: 250px;
             background-color: #e0e0e0;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--light-text);
-            font-size: 1.2rem;
+            color: var(--gray);
+            font-style: italic;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-img::after {
+            content: 'Фото примера работ';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.05);
         }
 
         .portfolio-info {
             padding: 20px;
-        }
-
-        .portfolio-info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--primary-dark);
-        }
-
-        /* Contacts Section */
-        .contacts {
             text-align: center;
         }
 
-        .contact-methods {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .contact-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            min-width: 250px;
-            transition: transform 0.3s;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .contact-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .contact-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+        .portfolio-info h3 {
             color: var(--primary-dark);
-        }
-
-        .contact-info {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 15px;
-        }
-
-        .contact-link {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 8px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s;
-        }
-
-        .contact-link:hover {
-            background-color: var(--primary-dark);
+            margin-bottom: 10px;
         }
 
         /* Footer */
         footer {
             background-color: var(--primary-dark);
-            color: var(--white);
-            padding: 50px 0 20px;
+            color: white;
+            padding: 60px 0 30px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            gap: 40px;
             margin-bottom: 40px;
         }
 
@@ -409,16 +348,17 @@
             font-size: 1.3rem;
             margin-bottom: 20px;
             position: relative;
+            padding-bottom: 10px;
         }
 
         .footer-column h3::after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: 0;
             left: 0;
             width: 50px;
             height: 3px;
-            background-color: var(--accent);
+            background-color: var(--primary);
         }
 
         .footer-links {
@@ -426,48 +366,51 @@
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .footer-links a {
-            color: #e3f2fd;
+            color: #e0e0e0;
             text-decoration: none;
             transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .footer-links a:hover {
-            color: var(--accent);
+            color: white;
         }
 
-        .footer-social {
+        .contact-info {
             display: flex;
+            flex-direction: column;
             gap: 15px;
-            margin-top: 20px;
         }
 
-        .social-icon {
+        .contact-item {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 15px;
+        }
+
+        .contact-icon {
             width: 40px;
             height: 40px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            color: var(--white);
-            font-size: 1.2rem;
-            transition: background-color 0.3s;
-        }
-
-        .social-icon:hover {
-            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
         }
 
         .copyright {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
             font-size: 0.9rem;
-            color: #bbdefb;
         }
 
         /* Mobile Navigation */
@@ -476,8 +419,8 @@
             top: 0;
             right: -300px;
             width: 280px;
-            height: 100vh;
-            background-color: var(--white);
+            height: 100%;
+            background-color: white;
             box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
             z-index: 1100;
             transition: right 0.3s ease;
@@ -488,58 +431,36 @@
             right: 0;
         }
 
-        .mobile-nav ul {
+        .mobile-nav-links {
             list-style: none;
-            margin-bottom: 30px;
         }
 
-        .mobile-nav ul li {
-            margin-bottom: 20px;
+        .mobile-nav-links li {
+            margin-bottom: 15px;
         }
 
-        .mobile-nav ul li a {
+        .mobile-nav-links a {
             text-decoration: none;
-            color: var(--text);
+            color: var(--dark);
             font-size: 1.1rem;
             font-weight: 500;
-            transition: color 0.3s;
             display: block;
             padding: 10px;
             border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
-        .mobile-nav ul li a:hover {
-            color: var(--primary);
+        .mobile-nav-links a:hover {
             background-color: var(--secondary);
         }
 
-        .mobile-phone {
-            background-color: var(--secondary);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .mobile-phone i {
-            color: var(--primary);
-            margin-right: 8px;
-        }
-
-        .mobile-phone a {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            text-decoration: none;
-        }
-
-        .close-menu {
+        .close-nav {
             position: absolute;
             top: 20px;
             right: 20px;
-            font-size: 1.5rem;
+            font-size: 24px;
             cursor: pointer;
-            color: var(--primary);
+            color: var(--primary-dark);
         }
 
         .overlay {
@@ -550,56 +471,60 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 1050;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
+            display: none;
         }
 
         .overlay.active {
-            opacity: 1;
-            visibility: visible;
+            display: block;
         }
 
-        /* Modal */
+        /* Contact Modal */
         .modal {
+            display: none;
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.9);
-            width: 90%;
-            max-width: 500px;
-            background-color: var(--white);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
             z-index: 1200;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            padding: 30px;
+            justify-content: center;
+            align-items: center;
         }
 
         .modal.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .modal-header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
         }
 
-        .modal-title {
-            font-size: 1.8rem;
-            color: var(--primary-dark);
+        .modal-content {
+            background-color: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: modalAppear 0.4s ease;
+        }
+
+        @keyframes modalAppear {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .close-modal {
-            font-size: 1.8rem;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
             cursor: pointer;
-            color: var(--light-text);
+            color: var(--gray);
             transition: color 0.3s;
         }
 
@@ -607,123 +532,134 @@
             color: var(--primary);
         }
 
-        .modal-contact {
+        .modal-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+        }
+
+        .modal-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .modal-contact-item {
             display: flex;
             align-items: center;
+            gap: 15px;
             padding: 15px;
+            background-color: var(--light);
             border-radius: 10px;
-            background-color: var(--secondary);
-            margin-bottom: 15px;
             transition: background-color 0.3s;
         }
 
-        .modal-contact:hover {
-            background-color: #e3f2fd;
+        .modal-contact-item:hover {
+            background-color: var(--secondary);
         }
 
-        .modal-contact i {
-            font-size: 1.8rem;
+        .modal-contact-icon {
             width: 50px;
             height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary);
-            margin-right: 15px;
+            font-size: 22px;
         }
 
-        .contact-details {
+        .modal-contact-text {
             flex: 1;
         }
 
-        .contact-details h3 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
+        .modal-contact-text h4 {
             color: var(--primary-dark);
+            margin-bottom: 5px;
         }
 
-        .contact-details p {
-            color: var(--text);
+        .modal-contact-text a, .modal-contact-text p {
+            color: var(--dark);
+            text-decoration: none;
             font-size: 1.1rem;
-            font-weight: 500;
         }
 
-        /* Responsive Design */
+        .modal-contact-text a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
         @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-phone {
+            .nav-menu {
                 display: none;
             }
 
-            .nav-menu, .contact-btn {
+            .contact-header {
                 display: none;
             }
 
-            .menu-toggle {
+            .mobile-toggle {
                 display: block;
             }
 
-            .hero {
-                padding: 130px 0 60px;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
+            .hero h2 {
+                font-size: 2.2rem;
             }
 
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
-            .hero-btns {
-                flex-direction: column;
-                gap: 10px;
+            /* Показываем только 3 элемента портфолио на мобильных */
+            .portfolio-item:nth-child(n+4) {
+                display: none;
             }
+        }
 
-            .btn {
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        @media (min-width: 993px) {
+            /* На десктопе показываем все элементы портфолио */
+            .portfolio-item:nth-child(n+4) {
+                display: block;
             }
         }
 
         @media (max-width: 576px) {
-            .logo-text {
-                font-size: 1.3rem;
+            .hero {
+                padding: 130px 0 70px;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
             }
 
             .section-title h2 {
-                font-size: 1.6rem;
+                font-size: 2rem;
             }
 
-            .contact-methods {
-                flex-direction: column;
-                align-items: center;
+            .service-card {
+                padding: 25px 20px;
             }
 
-            .contact-card {
-                width: 100%;
-            }
-
-            .services-grid {
+            .footer-content {
                 grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .modal-content {
+                padding: 20px;
+            }
+
+            .modal-contact-item {
+                padding: 12px;
+            }
+
+            .modal-contact-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
             }
         }
     </style>
@@ -734,109 +670,137 @@
         <div class="container header-container">
             <div class="logo">
                 <div class="logo-icon">
-                    <i class="fas fa-wrench"></i>
+                    <i class="fas fa-faucet"></i>
                 </div>
-                <div class="logo-text">Сантех<span>рыбка</span></div>
+                <h1>Сантехник Юрий</h1>
             </div>
 
-            <div class="header-phone">
-                <i class="fas fa-phone-alt"></i>
-                <span>+7 (999) 123-45-67</span>
-            </div>
-
-            <nav class="desktop-nav">
-                <ul class="nav-menu">
-                    <li><a href="#services">Услуги</a></li>
-                    <li><a href="#portfolio">Примеры работ</a></li>
-                    <li><a href="#contacts">Контакты</a></li>
-                </ul>
+            <nav class="nav-menu">
+                <a href="#services">Услуги</a>
+                <a href="#portfolio">Примеры работ</a>
+                <a href="#" id="contactsLink">Контакты</a>
             </nav>
 
-            <button class="contact-btn" id="showContacts">
-                <i class="fas fa-phone-alt"></i> Контакты
-            </button>
+            <div class="contact-header">
+                <a href="tel:+79001234567" class="phone-link">
+                    <i class="fas fa-phone"></i>
+                    +7 (900) 123-45-67
+                </a>
+                <div class="social-links">
+                    <a href="https://t.me/santehnik_yuri" class="social-icon" target="_blank">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="https://wa.me/79001234567" class="social-icon" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
 
-            <div class="menu-toggle" id="menuToggle">
+            <div class="mobile-toggle" id="mobileToggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
     <!-- Mobile Navigation -->
-    <div class="overlay" id="overlay"></div>
     <div class="mobile-nav" id="mobileNav">
-        <div class="close-menu" id="closeMenu">
+        <div class="close-nav" id="closeNav">
             <i class="fas fa-times"></i>
         </div>
-        <ul>
-            <li><a href="#hero">Главная</a></li>
-            <li><a href="#services">Услуги</a></li>
-            <li><a href="#portfolio">Примеры работ</a></li>
-            <li><a href="#contacts">Контакты</a></li>
+        <ul class="mobile-nav-links">
+            <li><a href="#services"><i class="fas fa-tools"></i> Услуги</a></li>
+            <li><a href="#portfolio"><i class="fas fa-images"></i> Примеры работ</a></li>
+            <li><a href="#" id="mobileContactsLink"><i class="fas fa-address-book"></i> Контакты</a></li>
+            <li><a href="tel:+79001234567"><i class="fas fa-phone"></i> +7 (900) 123-45-67</a></li>
+            <li>
+                <div class="social-links" style="margin-top: 20px;">
+                    <a href="https://t.me/santehnik_yuri" class="social-icon" target="_blank">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="https://wa.me/79001234567" class="social-icon" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </li>
         </ul>
-
-        <div class="mobile-phone">
-            <i class="fas fa-phone-alt"></i>
-            <a href="tel:+79991234567">+7 (999) 123-45-67</a>
-            <p>Звоните в любое время!</p>
-        </div>
     </div>
+    <div class="overlay" id="overlay"></div>
 
-    <!-- Modal Contacts -->
-    <div class="modal" id="contactsModal">
-        <div class="modal-header">
-            <h2 class="modal-title">Свяжитесь со мной</h2>
-            <div class="close-modal" id="closeModal">
-                <i class="fas fa-times"></i>
-            </div>
-        </div>
-
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
         <div class="modal-content">
-            <div class="modal-contact">
-                <i class="fas fa-phone-alt"></i>
-                <div class="contact-details">
-                    <h3>Телефон</h3>
-                    <p>+7 (999) 123-45-67</p>
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2 class="modal-title">Мои контакты</h2>
+
+            <div class="modal-contact-info">
+                <div class="modal-contact-item">
+                    <div class="modal-contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="modal-contact-text">
+                        <h4>Телефон для связи</h4>
+                        <a href="tel:+79001234567">+7 (900) 123-45-67</a>
+                    </div>
+                </div>
+
+                <div class="modal-contact-item">
+                    <div class="modal-contact-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <div class="modal-contact-text">
+                        <h4>Telegram</h4>
+                        <a href="https://t.me/santehnik_yuri" target="_blank">@santehnik_yuri</a>
+                    </div>
+                </div>
+
+                <div class="modal-contact-item">
+                    <div class="modal-contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="modal-contact-text">
+                        <h4>WhatsApp</h4>
+                        <a href="https://wa.me/79001234567" target="_blank">+7 (900) 123-45-67</a>
+                    </div>
+                </div>
+
+                <div class="modal-contact-item">
+                    <div class="modal-contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="modal-contact-text">
+                        <h4>График работы</h4>
+                        <p>Пн-Вс: 8:00 - 21:00</p>
+                    </div>
+                </div>
+
+                <div class="modal-contact-item">
+                    <div class="modal-contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="modal-contact-text">
+                        <h4>Зона обслуживания</h4>
+                        <p>Весь город и пригород</p>
+                    </div>
                 </div>
             </div>
-
-        <a href="#">    <div class="modal-contact">
-                <i class="fab fa-telegram-plane"></i>
-                <div class="contact-details">
-                    <h3>Telegram</h3>
-                    <p>@santechnik_yuri</p>
-                </div>
-            </div> </a>
-
-        <a href="#">    <div class="modal-contact">
-                <i class="fab fa-whatsapp"></i>
-                <div class="contact-details">
-                    <h3>WhatsApp</h3>
-                    <p>+7 (999) 123-45-67</p>
-                </div>
-            </div></a>
         </div>
     </div>
-    <div class="overlay" id="modalOverlay"></div>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
+    <section class="hero">
         <div class="container">
-            <h1>Профессиональные услуги сантехника в Москве</h1>
-            <p>Качественный ремонт и установка сантехники с гарантией. Работаю оперативно, чисто и по доступным ценам.</p>
-            <div class="hero-btns">
-                <a href="#contacts" class="btn btn-primary">Вызвать сантехника</a>
-                <a href="#services" class="btn btn-outline">Посмотреть услуги</a>
-            </div>
+            <h2>Профессиональные услуги сантехника</h2>
+            <p>Качественный ремонт и установка сантехники с гарантией. Работаю быстро, аккуратно и с соблюдением всех стандартов.</p>
+            <button class="cta-button" id="heroCta">Вызвать сантехника</button>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="section" id="services">
+    <section class="services" id="services">
         <div class="container">
             <div class="section-title">
                 <h2>Мои услуги</h2>
-                <p>Предоставляю широкий спектр сантехнических услуг с гарантией качества</p>
+                <p>Предоставляю полный спектр сантехнических услуг для квартир и частных домов</p>
             </div>
 
             <div class="services-grid">
@@ -845,11 +809,9 @@
                     <div class="service-icon">
                         <i class="fas fa-faucet"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>Замена смесителя</h3>
-                        <p>Профессиональная замена смесителей на кухне и в ванной комнате</p>
-                        <div class="service-price">от 800 ₽</div>
-                    </div>
+                    <h3>Замена смесителя</h3>
+                    <p class="service-description">Быстрая и качественная замена смесителей на кухне и в ванной комнате с герметизацией соединений.</p>
+                    <div class="service-price">от 800 руб.</div>
                 </div>
 
                 <!-- Service 2 -->
@@ -857,11 +819,9 @@
                     <div class="service-icon">
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>Установка/замена счетчиков</h3>
-                        <p>Установка, замена и поверка счетчиков воды с пломбировкой</p>
-                        <div class="service-price">от 1500 ₽</div>
-                    </div>
+                    <h3>Установка/замена счетчиков</h3>
+                    <p class="service-description">Установка и замена счетчиков воды с опломбированием и оформлением документов.</p>
+                    <div class="service-price">от 1200 руб.</div>
                 </div>
 
                 <!-- Service 3 -->
@@ -869,23 +829,19 @@
                     <div class="service-icon">
                         <i class="fas fa-shower"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>Устранение засоров</h3>
-                        <p>Чистка засоров в трубах, раковинах, ваннах и унитазах</p>
-                        <div class="service-price">от 1000 ₽</div>
-                    </div>
+                    <h3>Устранение засоров</h3>
+                    <p class="service-description">Прочистка засоров в раковинах, ваннах, душевых кабинах и канализационных трубах.</p>
+                    <div class="service-price">от 1000 руб.</div>
                 </div>
 
                 <!-- Service 4 -->
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-fire"></i>
+                        <i class="fas fa-fire-alt"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>Установка батарей</h3>
-                        <p>Монтаж и замена радиаторов отопления всех типов</p>
-                        <div class="service-price">от 2500 ₽</div>
-                    </div>
+                    <h3>Установка батарей</h3>
+                    <p class="service-description">Монтаж и замена радиаторов отопления с подключением к системе отопления.</p>
+                    <div class="service-price">от 2500 руб.</div>
                 </div>
 
                 <!-- Service 5 -->
@@ -893,11 +849,9 @@
                     <div class="service-icon">
                         <i class="fas fa-toilet"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>Ремонт унитазов</h3>
-                        <p>Ремонт сливного механизма, замена арматуры, устранение протечек</p>
-                        <div class="service-price">от 1200 ₽</div>
-                    </div>
+                    <h3>Ремонт унитазов</h3>
+                    <p class="service-description">Ремонт и замена арматуры, устранение течей, замена унитазов и биде.</p>
+                    <div class="service-price">от 1500 руб.</div>
                 </div>
 
                 <!-- Service 6 -->
@@ -905,11 +859,9 @@
                     <div class="service-icon">
                         <i class="fas fa-tint"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>Устранение течей</h3>
-                        <p>Ремонт протечек труб, соединений, радиаторов и сантехприборов</p>
-                        <div class="service-price">от 900 ₽</div>
-                    </div>
+                    <h3>Устранение течей</h3>
+                    <p class="service-description">Поиск и устранение течей в трубах, соединениях, радиаторах и сантехприборах.</p>
+                    <div class="service-price">от 900 руб.</div>
                 </div>
 
                 <!-- Service 7 -->
@@ -917,11 +869,9 @@
                     <div class="service-icon">
                         <i class="fas fa-utensils"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>Установка посудомоечной машины</h3>
-                        <p>Подключение посудомоечной машины к водопроводу и канализации</p>
-                        <div class="service-price">от 2000 ₽</div>
-                    </div>
+                    <h3>Установка посудомоечной машины</h3>
+                    <p class="service-description">Подключение посудомоечных машин к водопроводу и канализации с проверкой работы.</p>
+                    <div class="service-price">от 1800 руб.</div>
                 </div>
 
                 <!-- Service 8 -->
@@ -929,11 +879,9 @@
                     <div class="service-icon">
                         <i class="fas fa-tshirt"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>Установка стиральной машины</h3>
-                        <p>Подключение стиральной машины к коммуникациям</p>
-                        <div class="service-price">от 1800 ₽</div>
-                    </div>
+                    <h3>Установка стиральной машины</h3>
+                    <p class="service-description">Подключение стиральных машин к водопроводу, канализации и электросети.</p>
+                    <div class="service-price">от 1600 руб.</div>
                 </div>
 
                 <!-- Service 9 -->
@@ -941,98 +889,69 @@
                     <div class="service-icon">
                         <i class="fas fa-water"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>Подключение водонагревателя</h3>
-                        <p>Установка и подключение бойлеров и проточных водонагревателей</p>
-                        <div class="service-price">от 2500 ₽</div>
-                    </div>
+                    <h3>Подключение водонагревателя</h3>
+                    <p class="service-description">Установка и подключение накопительных и проточных водонагревателей.</p>
+                    <div class="service-price">от 2200 руб.</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section class="section portfolio" id="portfolio">
+    <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-title">
                 <h2>Примеры работ</h2>
-                <p>Реальные фотографии выполненных работ с описанием</p>
+                <p>Фотографии выполненных мною работ по установке и ремонту сантехники</p>
             </div>
 
             <div class="portfolio-grid">
-                <!-- Portfolio 1 -->
                 <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <i class="fas fa-camera"></i> Фото примера работы
-                    </div>
+                    <div class="portfolio-img"></div>
                     <div class="portfolio-info">
-                        <h3>Замена смесителя на кухне</h3>
-                        <p>Установка современного смесителя с выдвижным изливом</p>
+                        <h3>Замена кухонного смесителя</h3>
+                        <p>Квартира на ул. Ленина, 24</p>
                     </div>
                 </div>
 
-                <!-- Portfolio 2 -->
                 <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <i class="fas fa-camera"></i> Фото примера работы
-                    </div>
+                    <div class="portfolio-img"></div>
                     <div class="portfolio-info">
-                        <h3>Установка биде</h3>
-                        <p>Комплексная установка современного биде</p>
+                        <h3>Установка счетчиков воды</h3>
+                        <p>Квартира на пр. Мира, 15</p>
                     </div>
                 </div>
 
-                <!-- Portfolio 3 -->
                 <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <i class="fas fa-camera"></i> Фото примера работы
-                    </div>
+                    <div class="portfolio-img"></div>
                     <div class="portfolio-info">
-                        <h3>Монтаж радиаторов</h3>
-                        <p>Замена старых батарей на новые биметаллические</p>
+                        <h3>Замена батареи отопления</h3>
+                        <p>Частный дом в с. Подгорное</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contacts Section -->
-    <section class="section contacts" id="contacts">
-        <div class="container">
-            <div class="section-title">
-                <h2>Контакты</h2>
-                <p>Свяжитесь со мной удобным для вас способом</p>
-            </div>
-
-            <div class="contact-methods">
-                <!-- Phone -->
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone-alt"></i>
+                <div class="portfolio-item">
+                    <div class="portfolio-img"></div>
+                    <div class="portfolio-info">
+                        <h3>Подключение водонагревателя</h3>
+                        <p>Квартира на ул. Гагарина, 7</p>
                     </div>
-                    <h3>Телефон</h3>
-                    <div class="contact-info">+7 (999) 123-45-67</div>
-                    <a href="tel:+79991234567" class="contact-link">Позвонить</a>
                 </div>
 
-                <!-- Telegram -->
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-telegram-plane"></i>
+                <div class="portfolio-item">
+                    <div class="portfolio-img"></div>
+                    <div class="portfolio-info">
+                        <h3>Подключение стиральной машины</h3>
+                        <p>Квартира на ул. Кирова, 33</p>
                     </div>
-                    <h3>Telegram</h3>
-                    <div class="contact-info">@santechnik_yuri</div>
-                    <a href="https://t.me/santechnik_yuri" class="contact-link">Написать</a>
                 </div>
 
-                <!-- WhatsApp -->
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-whatsapp"></i>
+                <div class="portfolio-item">
+                    <div class="portfolio-img"></div>
+                    <div class="portfolio-info">
+                        <h3>Замена арматуры унитаза</h3>
+                        <p>Квартира на ул. Пушкина, 12</p>
                     </div>
-                    <h3>WhatsApp</h3>
-                    <div class="contact-info">+7 (999) 123-45-67</div>
-                    <a href="https://wa.me/79991234567" class="contact-link">Написать</a>
                 </div>
             </div>
         </div>
@@ -1043,128 +962,173 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Сантехник рыбка</h3>
-                    <p>Качественные сантехнические услуги с гарантией в Москве и области.</p>
-                    <div class="footer-social">
-                        <a href="#" class="social-icon"><i class="fab fa-telegram-plane"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                    <h3>Сантехник Юрий</h3>
+                    <p style="color: #e0e0e0; margin-bottom: 20px;">Качественные сантехнические услуги с гарантией. Работаю оперативно и аккуратно.</p>
+                    <div class="social-links">
+                        <a href="https://t.me/santehnik_yuri" class="social-icon" target="_blank">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://wa.me/79001234567" class="social-icon" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="viber://chat?number=79001234567" class="social-icon">
+                            <i class="fab fa-viber"></i>
+                        </a>
                     </div>
                 </div>
 
                 <div class="footer-column">
                     <h3>Услуги</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Замена смесителей</a></li>
-                        <li><a href="#">Установка счетчиков</a></li>
-                        <li><a href="#">Устранение засоров</a></li>
-                        <li><a href="#">Ремонт унитазов</a></li>
-                        <li><a href="#">Подключение техники</a></li>
+                        <li><a href="#"><i class="fas fa-faucet"></i> Замена смесителей</a></li>
+                        <li><a href="#"><i class="fas fa-tachometer-alt"></i> Установка счетчиков</a></li>
+                        <li><a href="#"><i class="fas fa-shower"></i> Устранение засоров</a></li>
+                        <li><a href="#"><i class="fas fa-fire-alt"></i> Установка батарей</a></li>
+                        <li><a href="#"><i class="fas fa-toilet"></i> Ремонт унитазов</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
                     <h3>Контакты</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-phone-alt"></i> +7 (999) 123-45-67</li>
-                        <li><i class="fas fa-envelope"></i> santechnik@example.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Москва и область</li>
-                        <li><i class="fas fa-clock"></i> Ежедневно с 8:00 до 22:00</li>
-                    </ul>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <a href="tel:+79001234567" style="color: white;">+7 (900) 123-45-67</a>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <a href="mailto:santehnik@yuri.ru" style="color: white;">santehnik@yuri.ru</a>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span>Работаю по всему городу</span>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <span>Пн-Вс: 8:00 - 21:00</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="copyright">
-                &copy; 2023 Сантехник рыбка Все права защищены.
+                &copy; 2023 Сантехник Юрий. Все права защищены.
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menuToggle');
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
         const mobileNav = document.getElementById('mobileNav');
-        const closeMenu = document.getElementById('closeMenu');
+        const closeNav = document.getElementById('closeNav');
         const overlay = document.getElementById('overlay');
 
-        menuToggle.addEventListener('click', () => {
+        mobileToggle.addEventListener('click', () => {
             mobileNav.classList.add('active');
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
 
-        closeMenu.addEventListener('click', () => {
+        closeNav.addEventListener('click', () => {
             mobileNav.classList.remove('active');
             overlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = '';
         });
 
         overlay.addEventListener('click', () => {
             mobileNav.classList.remove('active');
             overlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = '';
         });
 
-        // Modal Contacts
-        const showContactsBtn = document.getElementById('showContacts');
-        const contactsModal = document.getElementById('contactsModal');
-        const closeModal = document.getElementById('closeModal');
-        const modalOverlay = document.getElementById('modalOverlay');
-
-        showContactsBtn.addEventListener('click', () => {
-            contactsModal.classList.add('active');
-            modalOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        closeModal.addEventListener('click', () => {
-            contactsModal.classList.remove('active');
-            modalOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-
-        modalOverlay.addEventListener('click', () => {
-            contactsModal.classList.remove('active');
-            modalOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-
-        // Close modal when pressing Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                contactsModal.classList.remove('active');
-                modalOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Smooth Scrolling for Anchor Links
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                // Пропускаем ссылки на контакты
+                if (this.getAttribute('href') === '#contacts') return;
+
                 e.preventDefault();
 
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
 
-                    // Close mobile menu if open
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+
+                // Close mobile nav if open
+                if (mobileNav.classList.contains('active')) {
                     mobileNav.classList.remove('active');
                     overlay.classList.remove('active');
-                    document.body.style.overflow = 'auto';
+                    document.body.style.overflow = '';
                 }
             });
         });
 
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        // Contact Modal Logic
+        const contactModal = document.getElementById('contactModal');
+        const contactsLink = document.getElementById('contactsLink');
+        const mobileContactsLink = document.getElementById('mobileContactsLink');
+        const heroCta = document.getElementById('heroCta');
+        const closeModal = document.getElementById('closeModal');
+
+        // Function to open modal
+        function openContactModal() {
+            contactModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Close mobile nav if open
+            if (mobileNav.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+        }
+
+        // Function to close modal
+        function closeContactModal() {
+            contactModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Event listeners
+        contactsLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            openContactModal();
+        });
+
+        mobileContactsLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            openContactModal();
+        });
+
+        heroCta.addEventListener('click', openContactModal);
+
+        closeModal.addEventListener('click', closeContactModal);
+
+        // Close modal when clicking outside
+        contactModal.addEventListener('click', function(e) {
+            if (e.target === contactModal) {
+                closeContactModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+                closeContactModal();
             }
         });
     </script>
